@@ -14,7 +14,6 @@ venueRoute
   .get('/', venue.index)
   .get('/:id(\\d+)', venue.get)
 
-
 let booking = require('./booking/')
 let bookingRoute = new Router({prefix: '/booking(s\\b|\\b)'})
 bookingRoute
