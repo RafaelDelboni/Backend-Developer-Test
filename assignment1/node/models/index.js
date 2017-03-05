@@ -7,7 +7,7 @@ const env = process.env.NODE_ENV || 'development'
 const config = require(path.join(__dirname, '..', 'config', 'config.json'))[env]
 
 let sequelize = (process.env.DATABASE_URL) ? 
-  new Sequelize(process.env.DATABASE_URL,config) : 
+  new Sequelize(process.env.DATABASE_URL, config) : 
   new Sequelize(config.database, config.username, config.password, config)
 
 let db = {}

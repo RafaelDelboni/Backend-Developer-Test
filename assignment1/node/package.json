@@ -4,9 +4,8 @@
   "main": "index.js",
   "scripts": {
     "migrate": "./node_modules/.bin/sequelize db:migrate",
+    "undo-migrate": "./node_modules/.bin/sequelize db:migrate:undo",
     "seed": "node seed/fill-db.js",
-    "createdb": "npm run migrate && npm run seed",
-    "destroydb": "./node_modules/.bin/sequelize db:migrate:undo",
     "dev": "./node_modules/.bin/nodemon .",
     "start": "node ."
   },
