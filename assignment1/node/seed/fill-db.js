@@ -17,7 +17,7 @@ db.serialize(function() {
 
   let sql = fs.readFileSync('../resources/data.sql','utf8')
   sql.toString().split('\n').forEach(function(line, index, arr) {
-    if (index === arr.length - 1 && line === '') { return }
+    if (index === arr.length - 1 && line === '') return
     db.run(line)
   })
 
