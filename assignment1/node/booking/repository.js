@@ -63,9 +63,13 @@ let getBooking = function (id) {
   })
 }
 
-let getBookingViewModel = function(result) {
-  let venue = _.get(result, ['items', 0, 'Item', 'Venue'])
-  return (venue) ? Object.assign({result}, {Venue: venue}) : result
+let getBookingViewModel = function(booking) {
+  for (let i = 0; i < booking.items.length; i++) {
+    let venue = _.get(booking.items, [i, 'Item', 'Venue'])
+    if (venue)
+      return Object.assign(booking, {Venue: venue})
+  }
+  return booking
 }
 
 module.exports = {
